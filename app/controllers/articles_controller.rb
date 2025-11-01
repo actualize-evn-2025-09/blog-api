@@ -4,4 +4,10 @@ class ArticlesController < ApplicationController
 
     render template: "articles/index"
   end
+
+  def show
+    @article = Article.find(params[:id])
+
+    render template: "articles/show"
+  end
 end
