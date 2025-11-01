@@ -19,4 +19,15 @@ class ArticlesController < ApplicationController
 
     render template: "articles/show"
   end
+
+  def update
+    @article = Article.find(params[:id])
+
+    @article.update(
+      title: params[:title] || @article.title,
+      content: params[:content] || @article.content
+    )
+
+    render template: "articles/show"
+  end
 end
