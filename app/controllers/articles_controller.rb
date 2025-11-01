@@ -10,4 +10,13 @@ class ArticlesController < ApplicationController
 
     render template: "articles/show"
   end
+
+  def create
+    @article = Article.create(
+      title: params[:title],
+      content: params[:content]
+    )
+
+    render template: "articles/show"
+  end
 end
