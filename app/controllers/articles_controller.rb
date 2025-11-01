@@ -30,4 +30,12 @@ class ArticlesController < ApplicationController
 
     render template: "articles/show"
   end
+
+  def destroy
+    @article = Article.find(params[:id])
+
+    @article.destroy
+
+    render json: { message: "Article deleted..." }
+  end
 end

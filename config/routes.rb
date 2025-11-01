@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "/articles/:id" => "articles#show"
   post "/articles" => "articles#create"
   put "/articles/:id" => "articles#update"
+  delete "/articles/:id" => "articles#destroy"
 end
