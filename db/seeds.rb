@@ -1,9 +1,20 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+articles = [
+  {
+    title: "Welcome to Code School of Guam",
+    content: "This is our very first article! Stay tuned for more updates and helpful content."
+  },
+  {
+    title: "Learning Ruby on Rails",
+    content: "Rails makes full-stack web development fast and enjoyable! Build something amazing today."
+  },
+  {
+    title: "Community Matters",
+    content: "We're building a strong tech community in Guam. Join us in growing local talent!"
+  }
+]
+
+articles.each do |article|
+  Article.create!(article)
+end
+
+puts "Seeded #{Article.count} articles 🎉"
