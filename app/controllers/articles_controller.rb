@@ -2,13 +2,13 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
-    render template: "articles/index"
+    render :index
   end
 
   def show
     @article = Article.find(params[:id])
 
-    render template: "articles/show"
+    render :show
   end
 
   def create
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
       content: params[:content]
     )
 
-    render template: "articles/show"
+    render :show
   end
 
   def update
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
       content: params[:content] || @article.content
     )
 
-    render template: "articles/show"
+    render :show
   end
 
   def destroy
